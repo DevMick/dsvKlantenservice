@@ -77,10 +77,7 @@ const FundReception = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulier voor fondsenontvangst</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Snelle en veilige verwerking<br />
-            Vul het formulier correct in om je geld vandaag nog per directe overboeking te ontvangen.
-          </p>
+
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
