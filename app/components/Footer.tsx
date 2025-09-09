@@ -40,12 +40,6 @@ const Footer = () => {
       link: 'tel:+33123456789'
     },
     {
-      icon: MapPin,
-      title: 'Adresse',
-      info: 'France - Service National',
-      link: null
-    },
-    {
       icon: Clock,
       title: 'Horaires',
       info: '24h/24 - 7j/7',
@@ -54,8 +48,155 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
+      {/* Animations d'arrière-plan - Réseau global de confiance */}
+      <div className="absolute inset-0 z-0">
+        {/* Grille de connexions mondiales */}
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute border-l border-primary-400/20"
+              style={{
+                left: `${15 + i * 15}%`,
+                height: '100%'
+              }}
+              animate={{
+                opacity: [0.1, 0.3, 0.1]
+              }}
+              transition={{
+                duration: 4 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+            />
+          ))}
+
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute border-t border-secondary-400/15 w-full"
+              style={{
+                top: `${25 + i * 20}%`
+              }}
+              animate={{
+                opacity: [0.1, 0.25, 0.1]
+              }}
+              transition={{
+                duration: 5 + i * 0.3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.4
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Nœuds de réseau pulsants */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-primary-400/40 rounded-full"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: `${20 + (i % 3) * 30}%`
+            }}
+            animate={{
+              scale: [1, 2, 1],
+              opacity: [0.4, 0.8, 0.4],
+              boxShadow: [
+                '0 0 0 0 rgba(14, 165, 233, 0.4)',
+                '0 0 0 10px rgba(14, 165, 233, 0)',
+                '0 0 0 0 rgba(14, 165, 233, 0.4)'
+              ]
+            }}
+            transition={{
+              duration: 3 + i * 0.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3
+            }}
+          />
+        ))}
+
+        {/* Signaux de transmission */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary-300/20 rounded-full"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0.1, 0.3],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-1/3 right-1/4 w-24 h-24 border border-secondary-400/25 rounded-full"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.4, 0.15, 0.4],
+            rotate: [0, -180, -360]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+
+        {/* Flux de données de confiance */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 400" fill="none">
+          <motion.path
+            d="M0 200 Q300 100 600 200 Q900 300 1200 200"
+            stroke="url(#trustGradient)"
+            strokeWidth="1"
+            fill="none"
+            strokeDasharray="4,4"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 0.3 }}
+            transition={{ duration: 6, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+          />
+
+          <defs>
+            <linearGradient id="trustGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Particules de fiabilité */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-accent-50/60 rounded-full"
+            style={{
+              left: `${5 + i * 8}%`,
+              top: `${15 + (i % 4) * 20}%`
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0, 0.8, 0],
+              scale: [0, 1.5, 0]
+            }}
+            transition={{
+              duration: 4 + i * 0.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="py-12 sm:py-16 lg:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -71,7 +212,7 @@ const Footer = () => {
               <div className="flex items-center mb-6">
                 <Package className="w-8 h-8 text-primary-500 mr-3" />
                 <h3 className="text-2xl font-bold">
-                  <span className="text-primary-500">DSV</span> Colis
+                  <span className="text-primary-500">DSV</span> Klantenservice
                 </h3>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
@@ -172,7 +313,7 @@ const Footer = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-              © 2024 DSV Colis. Tous droits réservés.
+              © 2024 DSV Klantenservice. Tous droits réservés.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span>Politique de confidentialité</span>

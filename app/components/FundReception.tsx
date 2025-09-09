@@ -243,10 +243,10 @@ const FundReception = () => {
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
                   Adresse complète *
                 </label>
-                <textarea
+                <input
+                  type="text"
                   {...register('adresse', { required: 'L\'adresse est obligatoire' })}
-                  rows={3}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none ${
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.adresse ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Votre adresse complète"

@@ -79,8 +79,129 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gray-50 relative overflow-hidden">
+      {/* Animations d'arrière-plan - Flux de données sécurisées */}
+      <div className="absolute inset-0 z-0">
+        {/* Flux de données binaires animés */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-primary-600 font-mono text-xs"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 3) * 30}%`
+              }}
+              animate={{
+                y: [-20, -400],
+                opacity: [0, 0.8, 0]
+              }}
+              transition={{
+                duration: 4 + i * 0.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 0.3
+              }}
+            >
+              {Array.from({ length: 20 }, () => Math.random() > 0.5 ? '1' : '0').join('')}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Cercles de sécurité concentriques */}
+        <motion.div
+          className="absolute top-1/4 right-1/6 w-32 h-32 border border-primary-200/20 rounded-full"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0.1, 0.3],
+            rotate: [0, 360]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.div
+          className="absolute top-1/4 right-1/6 w-24 h-24 border border-secondary-300/25 rounded-full"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.4, 0.15, 0.4],
+            rotate: [0, -360]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+
+        {/* Éléments de connexion sécurisée */}
+        <motion.div
+          className="absolute bottom-1/3 left-1/6 w-4 h-4 bg-primary-400/30 rounded-full"
+          animate={{
+            scale: [1, 2, 1],
+            opacity: [0.6, 0.2, 0.6],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        {/* Lignes de transmission de données */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 600" fill="none">
+          <motion.path
+            d="M50 300 Q200 100 400 300 Q600 500 750 300"
+            stroke="url(#dataGradient)"
+            strokeWidth="1"
+            fill="none"
+            strokeDasharray="5,5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            whileInView={{ pathLength: 1, opacity: 0.4 }}
+            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+            viewport={{ once: false }}
+          />
+
+          <defs>
+            <linearGradient id="dataGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Particules de chiffrement */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-secondary-400 rounded-full"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${30 + (i % 2) * 40}%`
+            }}
+            animate={{
+              scale: [0, 1.5, 0],
+              opacity: [0, 0.8, 0],
+              rotate: [0, 180, 360]
+            }}
+            transition={{
+              duration: 3 + i * 0.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.4
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

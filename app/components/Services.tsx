@@ -62,8 +62,130 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white relative overflow-hidden">
+      {/* Animations d'arrière-plan - Réseau de livraison sécurisé */}
+      <div className="absolute inset-0 z-0">
+        {/* Lignes de connexion animées représentant le réseau de livraison */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+          {/* Ligne principale de livraison */}
+          <motion.path
+            d="M100 400 Q300 200 600 400 Q900 600 1100 400"
+            stroke="url(#gradient1)"
+            strokeWidth="2"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            whileInView={{ pathLength: 1, opacity: 0.3 }}
+            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+            viewport={{ once: false }}
+          />
+
+          {/* Lignes secondaires - réseau de distribution */}
+          <motion.path
+            d="M200 300 L400 500 L600 300 L800 500 L1000 300"
+            stroke="url(#gradient2)"
+            strokeWidth="1.5"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            whileInView={{ pathLength: 1, opacity: 0.2 }}
+            transition={{ duration: 4, ease: "easeInOut", delay: 0.5, repeat: Infinity, repeatType: "reverse" }}
+            viewport={{ once: false }}
+          />
+
+          {/* Définition des gradients */}
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.6" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.4" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1e293b" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#334155" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#475569" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Particules de sécurité flottantes */}
+        <motion.div
+          className="absolute top-20 left-10 w-2 h-2 bg-primary-400 rounded-full"
+          animate={{
+            x: [0, 100, 200, 100, 0],
+            y: [0, -50, 0, 50, 0],
+            scale: [1, 1.5, 1, 1.2, 1],
+            opacity: [0.3, 0.8, 0.5, 0.9, 0.3]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.div
+          className="absolute top-40 right-20 w-3 h-3 bg-secondary-500 rounded-full"
+          animate={{
+            x: [0, -80, -160, -80, 0],
+            y: [0, 60, 0, -40, 0],
+            scale: [1, 1.3, 1, 1.1, 1],
+            opacity: [0.4, 0.7, 0.6, 0.8, 0.4]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-primary-300 rounded-full"
+          animate={{
+            x: [0, 120, 60, 180, 0],
+            y: [0, -80, -40, -100, 0],
+            scale: [1, 1.4, 1, 1.2, 1],
+            opacity: [0.5, 0.9, 0.4, 0.7, 0.5]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+
+        {/* Éléments de sécurité pulsants */}
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-primary-300/30 rounded-full"
+          animate={{
+            scale: [1, 1.8, 1],
+            opacity: [0.3, 0.1, 0.3],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-1/4 left-1/5 w-6 h-6 border-2 border-secondary-400/25 rounded-full"
+          animate={{
+            scale: [1, 2, 1],
+            opacity: [0.2, 0.05, 0.2],
+            rotate: [0, -180, -360]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
