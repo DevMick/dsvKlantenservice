@@ -151,22 +151,14 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className={`lg:hidden py-4 border-t transition-colors duration-300 ${
-              isScrolled
-                ? 'border-gray-200'
-                : 'border-white/20'
-            }`}
+            className="lg:hidden py-4 border-t bg-white border-gray-200 rounded-b-lg shadow-lg"
           >
             <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left font-medium py-2 transition-colors duration-300 ${
-                    isScrolled
-                      ? 'text-gray-700 hover:text-primary-600'
-                      : 'text-white hover:text-primary-200'
-                  }`}
+                  className="text-left font-medium py-3 px-4 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-300"
                 >
                   {item.name}
                 </button>
