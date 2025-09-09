@@ -38,7 +38,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled
         ? 'bg-white/95 backdrop-blur-sm shadow-lg'
-        : 'bg-transparent'
+        : 'bg-white/95 backdrop-blur-sm shadow-md'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Header */}
@@ -50,11 +50,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               onClick={() => scrollToSection('accueil')}
-              className={`font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                  : 'text-white hover:text-primary-200 hover:bg-white/10'
-              }`}
+              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
               Accueil
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -64,11 +60,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               onClick={() => scrollToSection('services')}
-              className={`font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                  : 'text-white hover:text-primary-200 hover:bg-white/10'
-              }`}
+              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
               Services
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -92,9 +84,7 @@ const Header = () => {
               />
             </div>
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">
-              <span className={`transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}>Klantenservice</span>
+              <span className="text-gray-900">Klantenservice</span>
             </h1>
           </motion.div>
 
@@ -105,11 +95,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               onClick={() => scrollToSection('contact')}
-              className={`font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                  : 'text-white hover:text-primary-200 hover:bg-white/10'
-              }`}
+              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
               Enregistrement
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -119,11 +105,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               onClick={() => scrollToSection('fund-reception')}
-              className={`font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                  : 'text-white hover:text-primary-200 hover:bg-white/10'
-              }`}
+              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
               Réception de Fonds
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -133,20 +115,12 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              isScrolled
-                ? 'hover:bg-gray-100'
-                : 'hover:bg-white/10'
-            }`}
+            className="lg:hidden p-2 rounded-lg transition-colors hover:bg-gray-100"
           >
             {isMenuOpen ? (
-              <X className={`w-6 h-6 transition-colors duration-300 ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`} />
+              <X className="w-6 h-6 text-gray-700" />
             ) : (
-              <Menu className={`w-6 h-6 transition-colors duration-300 ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`} />
+              <Menu className="w-6 h-6 text-gray-700" />
             )}
           </button>
         </div>
