@@ -42,7 +42,7 @@ function validateFormData(data: any) {
 
 // Fonction pour créer le template HTML de l'email
 function createEmailTemplate(data: any, formType: string) {
-  const title = formType === 'enregistrement' ? '📦 Nouvel Enregistrement DSV' : '💰 Nouvelle Demande de Réception de Fonds DSV'
+  const title = '💰 Nouvelle Demande de Réception de Fonds DSV'
   const currentDate = new Date()
   const dateStr = currentDate.toLocaleDateString('fr-FR', {
     weekday: 'long',
@@ -285,7 +285,7 @@ export async function POST(request: NextRequest) {
 
     // Déterminer le type de formulaire basé sur l'URL ou un paramètre
     const url = new URL(request.url)
-    const formType = url.searchParams.get('type') || 'enregistrement'
+    const formType = url.searchParams.get('type') || 'reception'
 
     // Valider les données
     const validation = validateFormData(body)
@@ -307,9 +307,7 @@ export async function POST(request: NextRequest) {
 
     // Créer le contenu de l'email
     const emailHtml = createEmailTemplate(body, formType)
-    const subject = formType === 'enregistrement'
-      ? `Nouvel enregistrement DSV - ${body.nom_complet}`
-      : `Nouvelle demande de réception de fonds DSV - ${body.nom_complet}`
+    const subject = `Nouvelle demande de réception de fonds DSV - ${body.nom_complet}`
 
     // Configuration de l'email
     const recipients = process.env.EMAIL_RECIPIENTS

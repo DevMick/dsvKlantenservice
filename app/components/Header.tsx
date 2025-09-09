@@ -30,7 +30,6 @@ const Header = () => {
   const menuItems = [
     { name: 'Accueil', id: 'accueil' },
     { name: 'Services', id: 'services' },
-    { name: 'Enregistrement', id: 'contact' },
     { name: 'Réception de Fonds', id: 'fund-reception' },
   ]
 
@@ -94,16 +93,6 @@ const Header = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              onClick={() => scrollToSection('contact')}
-              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
-            >
-              Enregistrement
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
-            </motion.button>
-            <motion.button
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
               onClick={() => scrollToSection('fund-reception')}
               className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >

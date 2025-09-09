@@ -317,17 +317,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 mb-8"
           >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.1)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
-              className="px-4 py-2 sm:px-6 sm:py-3 border-2 border-white/30 rounded-full text-white font-medium text-sm sm:text-base backdrop-blur-sm bg-white/5 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Enregistrement
-            </motion.button>
+
 
             <motion.button
               whileHover={{
