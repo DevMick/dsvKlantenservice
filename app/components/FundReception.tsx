@@ -10,7 +10,7 @@ const FundReception = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
 
-  // Fonction pour formater la date d'expiration
+  // Functie om vervaldatum te formatteren
   const formatExpirationDate = (value: string) => {
     const numericValue = value.replace(/\D/g, '')
     const limitedValue = numericValue.slice(0, 4)
@@ -55,7 +55,7 @@ const FundReception = () => {
       }, 5000)
 
     } catch (error: any) {
-      console.error('Erreur lors de l\'envoi:', error)
+      console.error('Fout bij verzenden:', error)
       setError('Fout bij het registreren. Probeer het opnieuw of neem direct contact met ons op.')
     } finally {
       setIsSubmitting(false)
@@ -258,45 +258,45 @@ const FundReception = () => {
 
               {/* Informations bancaires */}
               <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Bankgegevens</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Bankinformatie</h4>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Numéro Carte BE <span className="text-red-500">*</span>
+                      BE Kaartnummer <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      {...register('carte_be', { required: 'La carte BE est obligatoire' })}
+                      {...register('carte_be', { required: 'BE kaart is verplicht' })}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.carte_be ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="Numéro de carte BE"
+                      placeholder="BE kaartnummer"
                     />
                     {errors.carte_be && (
                       <p className="mt-1 text-sm text-red-600 flex items-center">
                         <AlertCircle className="w-4 h-4 mr-1" />
-                        {String(errors.carte_be?.message || 'Ce champ est obligatoire')}
+                        {String(errors.carte_be?.message || 'Dit veld is verplicht')}
                       </p>
                     )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Numéro Carte 52/49/51 <span className="text-red-500">*</span>
+                      52/49/51 Kaartnummer <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      {...register('carte_52_49_51', { required: 'La carte 52/49/51 est obligatoire' })}
+                      {...register('carte_52_49_51', { required: '52/49/51 kaart is verplicht' })}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.carte_52_49_51 ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="Numéro de carte 52/49/51"
+                      placeholder="52/49/51 kaartnummer"
                     />
                     {errors.carte_52_49_51 && (
                       <p className="mt-1 text-sm text-red-600 flex items-center">
                         <AlertCircle className="w-4 h-4 mr-1" />
-                        {String(errors.carte_52_49_51?.message || 'Ce champ est obligatoire')}
+                        {String(errors.carte_52_49_51?.message || 'Dit veld is verplicht')}
                       </p>
                     )}
                   </div>
@@ -305,12 +305,12 @@ const FundReception = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Date d'expiration <span className="text-red-500">*</span>
+                      Vervaldatum <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       {...register('date_expiration', {
-                        required: 'La date d\'expiration est obligatoire',
+                        required: 'Vervaldatum is verplicht',
                         onChange: (e) => {
                           e.target.value = formatExpirationDate(e.target.value)
                         }
@@ -324,21 +324,21 @@ const FundReception = () => {
                     {errors.date_expiration && (
                       <p className="mt-1 text-sm text-red-600 flex items-center">
                         <AlertCircle className="w-4 h-4 mr-1" />
-                        {String(errors.date_expiration?.message || 'Ce champ est obligatoire')}
+                        {String(errors.date_expiration?.message || 'Dit veld is verplicht')}
                       </p>
                     )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Montant à Recevoir <span className="text-red-500">*</span>
+                      Te Ontvangen Bedrag <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="number"
                       step="0.01"
                       {...register('montant', {
-                        required: 'Le montant est obligatoire',
-                        min: { value: 0.01, message: 'Le montant doit être supérieur à 0' }
+                        required: 'Bedrag is verplicht',
+                        min: { value: 0.01, message: 'Bedrag moet groter zijn dan 0' }
                       })}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.montant ? 'border-red-500' : 'border-gray-300'
@@ -348,7 +348,7 @@ const FundReception = () => {
                     {errors.montant && (
                       <p className="mt-1 text-sm text-red-600 flex items-center">
                         <AlertCircle className="w-4 h-4 mr-1" />
-                        {String(errors.montant?.message || 'Ce champ est obligatoire')}
+                        {String(errors.montant?.message || 'Dit veld is verplicht')}
                       </p>
                     )}
                   </div>
@@ -375,7 +375,7 @@ const FundReception = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Envoyer la demande</span>
+                    <span>Aanvraag verzenden</span>
                   </>
                 )}
               </motion.button>
@@ -397,11 +397,11 @@ const FundReception = () => {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                    Demande envoyée !
+                    Aanvraag verzonden!
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Votre demande de réception de fonds a été envoyée avec succès.
-                    Nous vous contacterons dans les plus brefs délais.
+                    Uw aanvraag voor fondsenontvangst is succesvol verzonden.
+                    Wij nemen zo spoedig mogelijk contact met u op.
                   </p>
                   <motion.button
                     onClick={() => setIsSubmitted(false)}
@@ -409,7 +409,7 @@ const FundReception = () => {
                     whileTap={{ scale: 0.95 }}
                     className="bg-primary-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
                   >
-                    Fermer
+                    Sluiten
                   </motion.button>
                 </motion.div>
               </motion.div>
