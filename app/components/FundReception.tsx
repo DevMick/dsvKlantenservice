@@ -43,10 +43,10 @@ const FundReception = () => {
       const result = await response.json()
 
       if (!response.ok) {
-        throw new Error(result.error || 'Erreur lors de l\'envoi')
+        throw new Error(result.error || 'Fout bij het verzenden')
       }
 
-      console.log('Email envoyé avec succès:', result)
+      console.log('E-mail succesvol verzonden:', result)
       setIsSubmitted(true)
       reset()
 
@@ -56,7 +56,7 @@ const FundReception = () => {
 
     } catch (error: any) {
       console.error('Erreur lors de l\'envoi:', error)
-      setError('Erreur lors de l\'enregistrement. Veuillez réessayer ou nous contacter directement.')
+      setError('Fout bij het registreren. Probeer het opnieuw of neem direct contact met ons op.')
     } finally {
       setIsSubmitting(false)
     }
@@ -65,9 +65,9 @@ const FundReception = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
+      title: 'E-mail',
       info: 'registratie@dsv-klantenservice.com',
-      subinfo: 'Réponse sous 24h'
+      subinfo: 'Antwoord binnen 24 uur'
     }
   ]
 
@@ -82,11 +82,11 @@ const FundReception = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulaire de Réception de Fonds</span>
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulier voor fondsenontvangst</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Remplissez ce formulaire pour enregistrer votre demande de réception de fonds.
-            Nous traiterons votre demande dans les plus brefs délais.
+            Vul dit formulier in om uw aanvraag voor fondsenontvangst te registreren.
+            Wij behandelen uw aanvraag zo snel mogelijk.
           </p>
         </motion.div>
 
@@ -100,7 +100,7 @@ const FundReception = () => {
           >
             <div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Informations importantes
+                Belangrijke informatie
               </h3>
               
               <div className="grid gap-6">
@@ -135,11 +135,11 @@ const FundReception = () => {
             >
               <h4 className="text-xl font-bold mb-2 flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
-                Réception de Fonds
+                Ontvangst van fondsen
               </h4>
               <p className="text-green-100 mb-4">
-                Traitement rapide et sécurisé de vos demandes de réception de fonds.
-                Service disponible 24h/24 et 7j/7.
+                Snelle en veilige verwerking van uw aanvragen voor fondsenontvangst.
+                Service 24/7 beschikbaar.
               </p>
             </motion.div>
           </motion.div>
@@ -152,7 +152,7 @@ const FundReception = () => {
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8"
           >
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Formulaire de réception de fonds
+              Formulier voor fondsenontvangst
             </h3>
 
             {error && (
@@ -163,7 +163,7 @@ const FundReception = () => {
               >
                 <AlertCircle className="w-6 h-6 text-red-600" />
                 <div>
-                  <h4 className="font-semibold text-red-800">Erreur</h4>
+                  <h4 className="font-semibold text-red-800">Fout</h4>
                   <p className="text-red-700 text-sm">{error}</p>
                 </div>
               </motion.div>
@@ -172,31 +172,31 @@ const FundReception = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Nom complet <span className="text-red-500">*</span>
+                  Volledige naam <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  {...register('nom_complet', { required: 'Le nom complet est obligatoire' })}
+                  {...register('nom_complet', { required: 'Volledige naam is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.nom_complet ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Votre nom complet"
+                  placeholder="Uw volledige naam"
                 />
                 {errors.nom_complet && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.nom_complet?.message || 'Ce champ est obligatoire')}
+                    {String(errors.nom_complet?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Téléphone <span className="text-red-500">*</span>
+                  Telefoon <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="tel"
-                  {...register('telephone', { required: 'Le téléphone est obligatoire' })}
+                  {...register('telephone', { required: 'Telefoonnummer is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.telephone ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -205,7 +205,7 @@ const FundReception = () => {
                 {errors.telephone && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.telephone?.message || 'Ce champ est obligatoire')}
+                    {String(errors.telephone?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -213,20 +213,20 @@ const FundReception = () => {
               {/* Adresse */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Adresse complète <span className="text-red-500">*</span>
+                  Volledig adres <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  {...register('adresse', { required: 'L\'adresse est obligatoire' })}
+                  {...register('adresse', { required: 'Adres is verplicht' })}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                     errors.adresse ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Votre adresse complète"
+                  placeholder="Uw volledige adres"
                 />
                 {errors.adresse && (
                   <p className="mt-1 text-sm text-red-600 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
-                    {String(errors.adresse?.message || 'Ce champ est obligatoire')}
+                    {String(errors.adresse?.message || 'Dit veld is verplicht')}
                   </p>
                 )}
               </div>
@@ -236,9 +236,9 @@ const FundReception = () => {
                 <div className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="text-sm font-semibold text-green-800 mb-1">Information importante</h4>
+                    <h4 className="text-sm font-semibold text-green-800 mb-1">Belangrijke informatie</h4>
                     <p className="text-sm text-green-700">
-                      Veuillez noter que vous n'avez rien à payer, l'acheteur a déjà tout payé donc tout est gratuit pour vous.
+                      Let op: u hoeft niets te betalen; de koper heeft al alles betaald, dus voor u is alles gratis.
                     </p>
                   </div>
                 </div>
@@ -246,19 +246,19 @@ const FundReception = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Description de l'article
+                  Beschrijving van het artikel
                 </label>
                 <input
                   type="text"
                   {...register('description_article')}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  placeholder="Description détaillée de l'article"
+                  placeholder="Gedetailleerde beschrijving van het artikel"
                 />
               </div>
 
               {/* Informations bancaires */}
               <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Informations bancaires</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Bankgegevens</h4>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div>

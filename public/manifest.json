@@ -1,7 +1,7 @@
 {
   "name": "DSV Klantenservice",
   "short_name": "DSV",
-  "description": "Service professionnel de récupération et livraison de colis",
+  "description": "Professionele service voor het ophalen en bezorgen van pakketten",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

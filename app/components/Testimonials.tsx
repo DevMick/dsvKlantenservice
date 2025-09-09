@@ -8,22 +8,22 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'Marieke van der Berg',
-      role: 'Cliente particulière',
-      content: 'J\'ai fait le nécessaire avec le service, j\'ai bien reçu mon argent en virement instantané merci pour votre fiabilité',
+      role: 'Particuliere klant',
+      content: 'Ik heb alles in orde gemaakt met de service en mijn geld ontvangen via een onmiddellijke overschrijving. Bedankt voor jullie betrouwbaarheid.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     },
     {
       name: 'Pieter Janssen',
-      role: 'Entrepreneur',
-      content: 'Je fais appel à DSV Klantenservice régulièrement pour mes transferts professionnels. Toujours à l\'heure, service impeccable !',
+      role: 'Ondernemer',
+      content: 'Ik doe regelmatig een beroep op DSV Klantenservice voor mijn professionele overschrijvingen. Altijd op tijd, perfecte service!',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     },
     {
       name: 'Sophie de Vries',
-      role: 'Commerçante',
-      content: 'DSV Klantenservice nous aide énormément pour nos réceptions de fonds. Service rapide, sécurisé et tarifs très compétitifs.',
+      role: 'Handelaar',
+      content: 'DSV Klantenservice helpt ons enorm bij onze fondsenontvangsten. Snelle, veilige service en zeer scherpe tarieven.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     }
@@ -208,10 +208,10 @@ const Testimonials = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Témoignages <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Clients</span>
+            <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Klant</span>getuigenissen
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Découvrez ce que nos clients disent de nos services de récupération et livraison de colis.
+            Ontdek wat onze klanten zeggen over onze ophaal- en bezorgdiensten.
           </p>
         </motion.div>
 
@@ -280,10 +280,10 @@ const Testimonials = () => {
         >
           <div className="bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl p-6 sm:p-8 lg:p-12 text-white">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              Rejoignez nos clients satisfaits
+              Word ook een tevreden klant
             </h3>
             <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Faites confiance à DSV pour vos besoins de récupération et livraison de colis.
+              Vertrouw op DSV voor uw ophaal- en bezorgbehoeften.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -291,7 +291,7 @@ const Testimonials = () => {
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
             >
-              Commencer maintenant
+              Nu beginnen
             </motion.button>
           </div>
         </motion.div>

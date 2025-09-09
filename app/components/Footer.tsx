@@ -14,16 +14,16 @@ const Footer = () => {
   }
 
   const services = [
-    { name: 'Récupération de Colis', id: 'services' },
-    { name: 'Livraison Express', id: 'services' },
-    { name: 'Service 24/7', id: 'services' },
-    { name: 'Suivi en Temps Réel', id: 'services' }
+    { name: 'Pakket Ophalen', id: 'services' },
+    { name: 'Express Bezorging', id: 'services' },
+    { name: '24/7 Service', id: 'services' },
+    { name: 'Realtime Tracking', id: 'services' }
   ]
 
   const quickLinks = [
-    { name: 'Accueil', id: 'accueil' },
-    { name: 'Services', id: 'services' },
-    { name: 'Réception de Fonds', id: 'fund-reception' }
+    { name: 'Home', id: 'accueil' },
+    { name: 'Diensten', id: 'services' },
+    { name: 'Geldoverdracht', id: 'fund-reception' }
   ]
 
   const contactInfo = [
@@ -35,7 +35,7 @@ const Footer = () => {
     },
     {
       icon: Clock,
-      title: 'Horaires',
+      title: 'Openingstijden',
       info: '24h/24 - 7j/7',
       link: null
     }
@@ -217,13 +217,13 @@ const Footer = () => {
                 </h3>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Votre partenaire de confiance pour la récupération et livraison de colis. 
-                Service rapide, fiable et sécurisé partout en France.
+                Uw betrouwbare partner voor het ophalen en bezorgen van pakketten.
+                Snelle, betrouwbare en veilige service door heel Nederland.
               </p>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center text-sm text-gray-400">
                   <Truck className="w-4 h-4 mr-2" />
-                  <span>Service 24/7</span>
+                  <span>24/7 Service</span>
                 </div>
               </div>
             </motion.div>
@@ -235,7 +235,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6 text-white">Nos Services</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Onze Diensten</h4>
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
@@ -257,7 +257,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-6 text-white">Liens Rapides</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Snelle Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
@@ -314,14 +314,14 @@ const Footer = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-              © 2024 Klantenservice. Tous droits réservés.
+              © 2024 Klantenservice. Alle rechten voorbehouden.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>Politique de confidentialité</span>
+              <span>Privacybeleid</span>
               <span>•</span>
-              <span>Conditions d'utilisation</span>
+              <span>Gebruiksvoorwaarden</span>
               <span>•</span>
-              <span>Mentions légales</span>
+              <span>Juridische vermeldingen</span>
             </div>
           </div>
         </motion.div>

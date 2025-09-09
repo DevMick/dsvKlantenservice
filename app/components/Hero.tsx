@@ -305,9 +305,9 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Service professionnel de récupération et livraison de colis
-            <span className="text-primary-300 font-semibold"> rapide</span> et
-            <span className="text-accent-50 font-semibold"> sécurisé</span>.
+            Professionele ophaal- en bezorgservice voor pakketten
+            <span className="text-primary-300 font-semibold"> snel</span> en
+            <span className="text-accent-50 font-semibold"> veilig</span>.
           </motion.p>
 
           {/* Boutons d'action transparents */}
@@ -328,7 +328,7 @@ const Hero = () => {
               onClick={() => scrollToSection('fund-reception')}
               className="px-4 py-2 sm:px-6 sm:py-3 border-2 border-primary-300/40 rounded-full text-white font-medium text-sm sm:text-base backdrop-blur-sm bg-primary-500/10 hover:border-primary-300/60 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Formulaire de Réception de Fonds
+              Formulier voor fondsenontvangst
             </motion.button>
           </motion.div>
         </motion.div>

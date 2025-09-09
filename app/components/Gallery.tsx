@@ -8,46 +8,46 @@ const Gallery = () => {
   const galleryItems = [
     {
       image: '/Récupération de Colis.jpg',
-      title: 'Récupération de Colis',
-      description: 'Service professionnel de récupération'
+      title: 'Pakket Ophalen',
+      description: 'Professionele ophaalservice'
     },
     {
       image: '/Livraison Express.jpg',
-      title: 'Livraison Express',
-      description: 'Livraison rapide et sécurisée'
+      title: 'Express Bezorging',
+      description: 'Snelle en veilige bezorging'
     },
     {
       image: '/Équipe Experte.jpg',
-      title: 'Équipe Experte',
-      description: 'Professionnels qualifiés et expérimentés'
+      title: 'Expert Team',
+      description: 'Gekwalificeerde en ervaren professionals'
     },
     {
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Service 24/7',
-      description: 'Disponible à tout moment'
+      title: '24/7 Service',
+      description: 'Altijd beschikbaar'
     }
   ]
 
   const features = [
     {
       icon: Package,
-      title: 'Récupération Sécurisée',
-      description: 'Prise en charge professionnelle de vos colis avec emballage sécurisé'
+      title: 'Veilig Ophalen',
+      description: 'Professionele behandeling van uw pakketten met veilige verpakking'
     },
     {
       icon: Truck,
-      title: 'Livraison Rapide',
-      description: 'Transport express avec suivi en temps réel jusqu\'à destination'
+      title: 'Snelle Bezorging',
+      description: 'Express transport met realtime tracking tot bestemming'
     },
     {
       icon: Clock,
-      title: 'Service 24/7',
-      description: 'Disponibilité permanente pour répondre à vos besoins urgents'
+      title: '24/7 Service',
+      description: 'Permanente beschikbaarheid voor uw urgente behoeften'
     },
     {
       icon: Shield,
-      title: 'Garantie Totale',
-      description: 'Assurance complète sur tous vos colis pendant le transport'
+      title: 'Volledige Garantie',
+      description: 'Volledige verzekering op al uw pakketten tijdens transport'
     }
   ]
 
@@ -85,10 +85,10 @@ const Gallery = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Notre <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Expertise</span>
+            Onze <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Expertise</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Découvrez notre savoir-faire et nos équipements professionnels pour la récupération et livraison de colis.
+            Ontdek onze knowhow en professionele uitrusting voor het ophalen en bezorgen van pakketten.
           </p>
         </motion.div>
 

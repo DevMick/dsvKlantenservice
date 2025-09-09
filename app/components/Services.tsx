@@ -8,35 +8,35 @@ const Services = () => {
   const services = [
     {
       icon: Package2,
-      title: 'Récupération Express',
-      description: 'Service de récupération ultra-rapide avec suivi en temps réel et garantie de sécurité maximale.',
-      features: ['Récupération en 2h', 'Suivi GPS temps réel', 'Emballage premium', 'Assurance incluse'],
+      title: 'Express ophaling',
+      description: 'Supersnelle ophaalservice met realtime tracking en maximale veiligheidsgarantie.',
+      features: ['Ophaling binnen 2 uur', 'Realtime GPS-tracking', 'Premium verpakking', 'Verzekering inbegrepen'],
       color: 'from-primary-500 to-primary-600',
       accent: 'primary'
     },
     {
       icon: Rocket,
-      title: 'Livraison Éclair',
-      description: 'Livraison ultra-rapide avec notre flotte de véhicules électriques et équipe d\'experts.',
-      features: ['Livraison 24/7', 'Véhicules électriques', 'Équipe certifiée', 'Tarifs compétitifs'],
+      title: 'Snelle levering',
+      description: 'Ultrasnelle levering met onze vloot elektrische voertuigen en een team van experts.',
+      features: ['Levering 24/7', 'Elektrische voertuigen', 'Gecertificeerd team', 'Concurrerende tarieven'],
       color: 'from-secondary-500 to-secondary-600',
       accent: 'secondary'
     },
     {
       icon: Sparkles,
-      title: 'Service Premium',
-      description: 'Solutions haut de gamme personnalisées avec accompagnement dédié et garanties exclusives.',
-      features: ['Conseiller dédié', 'Garantie premium', 'Service VIP', 'Support prioritaire'],
+      title: 'Premiumservice',
+      description: 'Maatwerkoplossingen van hoge kwaliteit met toegewijde begeleiding en exclusieve garanties.',
+      features: ['Toegewijde adviseur', 'Premiumgarantie', 'VIP-service', 'Prioritaire ondersteuning'],
       color: 'from-accent-500 to-accent-600',
       accent: 'accent'
     }
   ]
 
   const stats = [
-    { number: '24/7', label: 'Service Express', icon: Zap, color: 'text-accent-500' },
-    { number: '1000+', label: 'Clients Satisfaits', icon: Star, color: 'text-primary-500' },
-    { number: '100%', label: 'Sécurité Garantie', icon: Shield, color: 'text-secondary-500' },
-    { number: '50+', label: 'Villes Couvertes', icon: Globe, color: 'text-accent-600' }
+    { number: '24/7', label: 'Expressservice', icon: Zap, color: 'text-accent-500' },
+    { number: '1000+', label: 'Tevreden klanten', icon: Star, color: 'text-primary-500' },
+    { number: '100%', label: 'Gegarandeerde veiligheid', icon: Shield, color: 'text-secondary-500' },
+    { number: '50+', label: 'Bediende steden', icon: Globe, color: 'text-accent-600' }
   ]
 
   const containerVariants = {
@@ -195,11 +195,11 @@ const Services = () => {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Nos <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Services</span>
+            Onze <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">diensten</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            DSV vous accompagne pour tous vos besoins de récupération et livraison de colis avec des services professionnels
-            et une expertise reconnue.
+            DSV helpt u met al uw behoeften voor het ophalen en bezorgen van pakketten, met professionele diensten
+            en erkende expertise.
           </p>
         </motion.div>
 

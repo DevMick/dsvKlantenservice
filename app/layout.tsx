@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DSV Klantenservice - Service de Récupération et Livraison de Colis',
-  description: 'DSV Klantenservice - Service professionnel de récupération et livraison de colis. Rapide, fiable et sécurisé. Nous récupérons vos colis et les livrons chez vous.',
-  keywords: 'DSV, Klantenservice, colis, livraison, récupération, transport, logistique, service client',
+  title: 'DSV Klantenservice - Service voor het ophalen en bezorgen van pakketten',
+  description: 'DSV Klantenservice - Professionele service voor het ophalen en bezorgen van pakketten. Snel, betrouwbaar en veilig. Wij halen uw pakketten op en leveren ze bij u thuis.',
+  keywords: 'DSV, Klantenservice, pakketten, levering, ophaling, transport, logistiek, klantenservice',
   authors: [{ name: 'DSV Klantenservice' }],
   viewport: 'width=device-width, initial-scale=1',
   icons: {
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="nl">
       <head>
         <link rel="icon" type="image/png" href="/Logo.png" />
         <link rel="apple-touch-icon" href="/Logo.png" />

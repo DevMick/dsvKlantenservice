@@ -28,9 +28,9 @@ const Header = () => {
   }
 
   const menuItems = [
-    { name: 'Accueil', id: 'accueil' },
-    { name: 'Services', id: 'services' },
-    { name: 'Réception de Fonds', id: 'fund-reception' },
+    { name: 'Home', id: 'accueil' },
+    { name: 'Diensten', id: 'services' },
+    { name: 'Ontvangst van fondsen', id: 'fund-reception' },
   ]
 
   return (
@@ -51,7 +51,7 @@ const Header = () => {
               onClick={() => scrollToSection('accueil')}
               className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
-              Accueil
+              Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
             </motion.button>
             <motion.button
@@ -61,7 +61,7 @@ const Header = () => {
               onClick={() => scrollToSection('services')}
               className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
-              Services
+              Diensten
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
             </motion.button>
           </nav>
@@ -76,7 +76,7 @@ const Header = () => {
             <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
               <Image
                 src="/Logo.png"
-                alt="DSV Klantenservice Logo"
+                alt="DSV Klantenservice-logo"
                 fill
                 className="object-contain"
                 priority
@@ -96,7 +96,7 @@ const Header = () => {
               onClick={() => scrollToSection('fund-reception')}
               className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50"
             >
-              Réception de Fonds
+              Ontvangst van fondsen
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
             </motion.button>
           </nav>
