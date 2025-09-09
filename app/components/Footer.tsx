@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Truck } from 'lucide-react'
+import { Mail, MapPin, Clock, Truck } from 'lucide-react'
 import Image from 'next/image'
 
 const Footer = () => {
@@ -23,7 +23,6 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Accueil', id: 'accueil' },
     { name: 'Services', id: 'services' },
-    { name: 'Enregistrement', id: 'contact' },
     { name: 'Réception de Fonds', id: 'fund-reception' }
   ]
 
@@ -33,12 +32,6 @@ const Footer = () => {
       title: 'Email',
       info: 'registratie@dsv-klantenservice.com',
       link: 'mailto:registratie@dsv-klantenservice.com'
-    },
-    {
-      icon: Phone,
-      title: 'Téléphone',
-      info: '+33 1 23 45 67 89',
-      link: 'tel:+33123456789'
     },
     {
       icon: Clock,

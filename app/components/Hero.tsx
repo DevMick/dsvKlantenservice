@@ -328,7 +328,7 @@ const Hero = () => {
               onClick={() => scrollToSection('fund-reception')}
               className="px-4 py-2 sm:px-6 sm:py-3 border-2 border-primary-300/40 rounded-full text-white font-medium text-sm sm:text-base backdrop-blur-sm bg-primary-500/10 hover:border-primary-300/60 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Réception de Fonds
+              Formulaire de Réception de Fonds
             </motion.button>
           </motion.div>
         </motion.div>
