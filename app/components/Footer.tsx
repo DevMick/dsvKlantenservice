@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Package, Truck } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Truck } from 'lucide-react'
+import Image from 'next/image'
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -210,7 +211,14 @@ const Footer = () => {
               className="lg:col-span-1"
             >
               <div className="flex items-center mb-6">
-                <Package className="w-8 h-8 text-primary-500 mr-3" />
+                <div className="w-8 h-8 mr-3 relative">
+                  <Image
+                    src="/Logo.png"
+                    alt="DSV Klantenservice Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <h3 className="text-2xl font-bold">
                   <span className="text-primary-500">DSV</span> Klantenservice
                 </h3>

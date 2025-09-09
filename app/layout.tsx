@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   keywords: 'DSV, Klantenservice, colis, livraison, récupération, transport, logistique, service client',
   authors: [{ name: 'DSV Klantenservice' }],
   viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: [
+      { url: '/Logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/Logo.png', sizes: '16x16', type: 'image/png' },
+      { url: '/Logo.png', sizes: '192x192', type: 'image/png' }
+    ],
+    apple: { url: '/Logo.png', sizes: '180x180', type: 'image/png' },
+    shortcut: '/Logo.png'
+  }
 }
 
 export default function RootLayout({
@@ -20,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/Logo.png" />
+        <link rel="apple-touch-icon" href="/Logo.png" />
+        <link rel="shortcut icon" href="/Logo.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0284c7" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Package2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -81,8 +82,14 @@ const Header = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center space-x-3"
           >
-            <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center shadow-lg">
-              <Package2 className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
+              <Image
+                src="/Logo.png"
+                alt="DSV Klantenservice Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">
               <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">DSV</span>
