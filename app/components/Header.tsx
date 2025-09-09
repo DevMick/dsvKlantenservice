@@ -92,10 +92,9 @@ const Header = () => {
               />
             </div>
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">
-              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">DSV</span>
               <span className={`transition-colors duration-300 ${
                 isScrolled ? 'text-gray-900' : 'text-white'
-              }`}> Klantenservice</span>
+              }`}>Klantenservice</span>
             </h1>
           </motion.div>
 
