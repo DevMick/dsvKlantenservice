@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
-import { Mail, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 const FundReception = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -62,14 +62,7 @@ const FundReception = () => {
     }
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'E-mail',
-      info: 'registratie@dsv-klantenservice.com',
-      subinfo: 'Antwoord binnen 24 uur'
-    }
-  ]
+  const contactInfo = []
 
   return (
     <section id="fund-reception" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-white">
@@ -85,8 +78,8 @@ const FundReception = () => {
             <span className="bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">Formulier voor fondsenontvangst</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Vul dit formulier in om uw aanvraag voor fondsenontvangst te registreren.
-            Wij behandelen uw aanvraag zo snel mogelijk.
+            Snelle en veilige verwerking<br />
+            Vul het formulier correct in om je geld vandaag nog per directe overboeking te ontvangen.
           </p>
         </motion.div>
 
@@ -98,33 +91,7 @@ const FundReception = () => {
             viewport={{ once: true }}
             className="space-y-6 sm:space-y-8"
           >
-            <div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Belangrijke informatie
-              </h3>
-              
-              <div className="grid gap-6">
-                {contactInfo.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="bg-primary-100 p-3 rounded-lg">
-                      <item.icon className="w-6 h-6 text-primary-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-dark-900 mb-1">{item.title}</h4>
-                      <p className="text-primary-600 font-medium mb-1">{item.info}</p>
-                      <p className="text-gray-600 text-sm">{item.subinfo}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -138,8 +105,8 @@ const FundReception = () => {
                 Ontvangst van fondsen
               </h4>
               <p className="text-green-100 mb-4">
-                Snelle en veilige verwerking van uw aanvragen voor fondsenontvangst.
-                Service 24/7 beschikbaar.
+                Snelle en veilige verwerking<br />
+                Vul het formulier correct in om je geld vandaag nog per directe overboeking te ontvangen.
               </p>
             </motion.div>
           </motion.div>
