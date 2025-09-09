@@ -397,11 +397,12 @@ const FundReception = () => {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                    Aanvraag verzonden!
+                    We hebben uw aanvraag ontvangen
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Uw aanvraag voor fondsenontvangst is succesvol verzonden.
-                    Wij nemen zo spoedig mogelijk contact met u op.
+                    Een DSV agent zal contact met u opnemen via WhatsApp. Gelieve de nodige afspraken te maken om uw geld vandaag nog te ontvangen via onmiddellijke overschrijving.
+                    <br /><br />
+                    <strong>Dank U</strong>
                   </p>
                   <motion.button
                     onClick={() => setIsSubmitted(false)}
