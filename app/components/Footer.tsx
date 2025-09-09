@@ -31,8 +31,8 @@ const Footer = () => {
     {
       icon: Mail,
       title: 'Email',
-      info: 'registratie@autodp.org',
-      link: 'mailto:registratie@autodp.org'
+      info: 'registratie@dsv-klantenservice.com',
+      link: 'mailto:registratie@dsv-klantenservice.com'
     },
     {
       icon: Phone,

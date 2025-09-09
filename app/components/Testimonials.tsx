@@ -7,23 +7,23 @@ import { Star, Quote } from 'lucide-react'
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Marie Dubois',
+      name: 'Marieke van der Berg',
       role: 'Cliente particulière',
-      content: 'Service exceptionnel ! DSV a récupéré mon colis chez le vendeur et me l\'a livré le jour même. Très professionnel et fiable.',
+      content: 'J\'ai fait le nécessaire avec le service, j\'ai bien reçu mon argent en virement instantané merci pour votre fiabilité',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     },
     {
-      name: 'Pierre Martin',
+      name: 'Pieter Janssen',
       role: 'Entrepreneur',
-      content: 'Je fais appel à DSV régulièrement pour mes livraisons professionnelles. Toujours à l\'heure, service impeccable !',
+      content: 'Je fais appel à DSV Klantenservice régulièrement pour mes transferts professionnels. Toujours à l\'heure, service impeccable !',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     },
     {
-      name: 'Sophie Laurent',
+      name: 'Sophie de Vries',
       role: 'Commerçante',
-      content: 'DSV nous aide énormément pour la livraison de nos produits. Service rapide, sécurisé et tarifs très compétitifs.',
+      content: 'DSV Klantenservice nous aide énormément pour nos réceptions de fonds. Service rapide, sécurisé et tarifs très compétitifs.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     }

