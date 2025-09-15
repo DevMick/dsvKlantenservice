@@ -207,13 +207,13 @@ const Footer = () => {
                 <div className="w-8 h-8 mr-3 relative">
                   <Image
                     src="/Logo.png"
-                    alt="Klantenservice Logo"
+                    alt="herstelservice Logo"
                     fill
                     className="object-contain"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-primary-500">
-                  Klantenservice
+                  herstelservice
                 </h3>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
@@ -314,7 +314,7 @@ const Footer = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-              © 2024 Klantenservice. Alle rechten voorbehouden.
+              © 2024 herstelservice. Alle rechten voorbehouden.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span>Privacybeleid</span>

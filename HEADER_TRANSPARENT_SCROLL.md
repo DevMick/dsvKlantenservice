@@ -47,10 +47,10 @@ className={`font-medium transition-all duration-300 ${
     : 'text-white hover:text-primary-200 hover:bg-white/10'       // Blanc
 }`}
 
-// Titre "Klantenservice"
+// Titre "herstelservice"
 <span className={`transition-colors duration-300 ${
   isScrolled ? 'text-gray-900' : 'text-white'
-}`}> Klantenservice</span>
+}`}> herstelservice</span>
 
 // Icônes mobile
 <Menu className={`w-6 h-6 transition-colors duration-300 ${
@@ -198,7 +198,7 @@ Route (app)                              Size     First Load JS
 ### Éléments Adaptatifs
 - ✅ **Background** : Transparent ↔ Blanc
 - ✅ **Texte navigation** : Blanc ↔ Gris
-- ✅ **Titre "Klantenservice"** : Blanc ↔ Gris foncé
+- ✅ **Titre "herstelservice"** : Blanc ↔ Gris foncé
 - ✅ **Icônes mobile** : Blanc ↔ Gris
 - ✅ **Hover effects** : Adaptatifs selon l'état
 

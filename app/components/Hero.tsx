@@ -294,7 +294,7 @@ const Hero = () => {
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary-200 via-accent-50 to-primary-400 bg-clip-text text-transparent">
-              Klantenservice
+              herstelservice
             </span>
           </motion.h1>
 

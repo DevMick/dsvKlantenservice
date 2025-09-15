@@ -83,7 +83,7 @@ const Header = () => {
               />
             </div>
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">
-              <span className="text-gray-900">Klantenservice</span>
+              <span className="text-gray-900">herstelservice</span>
             </h1>
           </motion.div>
 
