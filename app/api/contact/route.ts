@@ -194,7 +194,7 @@ function createEmailTemplate(data: any) {
     <body>
       <div class="container">
         <div class="header">
-          <img src="cid:logo" alt="DSV Klantenservice Logo" style="width: 60px; height: 60px; margin-bottom: 10px; border-radius: 8px;">
+          <img src="cid:logo" alt="herstelservicedsv Logo" style="width: 60px; height: 60px; margin-bottom: 10px; border-radius: 8px;">
           <h1>${title}</h1>
           <p>📅 Ontvangen op ${dateStr} om ${timeStr}</p>
         </div>
@@ -336,7 +336,7 @@ export async function POST(request: NextRequest) {
         Bedrag: ${body.montant} €
 
         ---
-        Email verzonden vanaf DSV Klantenservice
+        Email verzonden vanaf herstelservicedsv
         Datum: ${new Date().toLocaleString('nl-NL')}
       `
     }

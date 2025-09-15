@@ -76,7 +76,7 @@ const Header = () => {
             <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
               <Image
                 src="/Logo.png"
-                alt="DSV Klantenservice-logo"
+                alt="herstelservicedsv-logo"
                 fill
                 className="object-contain"
                 priority

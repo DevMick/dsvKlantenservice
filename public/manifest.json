@@ -1,6 +1,6 @@
 {
-  "name": "DSV Klantenservice",
-  "short_name": "DSV",
+  "name": "herstelservicedsv",
+  "short_name": "herstelservicedsv",
   "description": "Professionele service voor het ophalen en bezorgen van pakketten",
   "start_url": "/",
   "display": "standalone",

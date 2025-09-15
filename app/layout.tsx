@@ -5,10 +5,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DSV Klantenservice - Service voor het ophalen en bezorgen van pakketten',
-  description: 'DSV Klantenservice - Professionele service voor het ophalen en bezorgen van pakketten. Snel, betrouwbaar en veilig. Wij halen uw pakketten op en leveren ze bij u thuis.',
-  keywords: 'DSV, Klantenservice, pakketten, levering, ophaling, transport, logistiek, klantenservice',
-  authors: [{ name: 'DSV Klantenservice' }],
+  title: 'herstelservicedsv - Service voor het ophalen en bezorgen van pakketten',
+  description: 'herstelservicedsv - Professionele service voor het ophalen en bezorgen van pakketten. Snel, betrouwbaar en veilig. Wij halen uw pakketten op en leveren ze bij u thuis.',
+  keywords: 'herstelservicedsv, pakketten, levering, ophaling, transport, logistiek, klantenservice',
+  authors: [{ name: 'herstelservicedsv' }],
   viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: [

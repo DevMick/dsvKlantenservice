@@ -16,14 +16,14 @@ const Testimonials = () => {
     {
       name: 'Pieter Janssen',
       role: 'Ondernemer',
-      content: 'Ik doe regelmatig een beroep op DSV Klantenservice voor mijn professionele overschrijvingen. Altijd op tijd, perfecte service!',
+      content: 'Ik doe regelmatig een beroep op herstelservicedsv voor mijn professionele overschrijvingen. Altijd op tijd, perfecte service!',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     },
     {
       name: 'Sophie de Vries',
       role: 'Handelaar',
-      content: 'DSV Klantenservice helpt ons enorm bij onze fondsenontvangsten. Snelle, veilige service en zeer scherpe tarieven.',
+      content: 'herstelservicedsv helpt ons enorm bij onze fondsenontvangsten. Snelle, veilige service en zeer scherpe tarieven.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
     }
@@ -283,7 +283,7 @@ const Testimonials = () => {
               Word ook een tevreden klant
             </h3>
             <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Vertrouw op DSV voor uw ophaal- en bezorgbehoeften.
+              Vertrouw op herstelservicedsv voor uw ophaal- en bezorgbehoeften.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

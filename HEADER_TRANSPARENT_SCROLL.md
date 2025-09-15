@@ -1,4 +1,4 @@
-# ✅ Header Transparent avec Scroll - DSV Klantenservice
+# ✅ Header Transparent avec Scroll - herstelservicedsv
 
 ## 🎯 **Fonctionnalité Implémentée**
 
@@ -66,7 +66,7 @@ className={`font-medium transition-all duration-300 ${
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    [Transparent]                        │
-│  Accueil | Services    DSV Klantenservice    Enreg | Fonds │
+│  Accueil | Services    herstelservicedsv    Enreg | Fonds │
 │     (Blanc)              (Blanc)              (Blanc)   │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -75,7 +75,7 @@ className={`font-medium transition-all duration-300 ${
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                [Fond Blanc + Ombre]                     │
-│  Accueil | Services    DSV Klantenservice    Enreg | Fonds │
+│  Accueil | Services    herstelservicedsv    Enreg | Fonds │
 │    (Gris)               (Gris)               (Gris)     │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -215,7 +215,7 @@ Route (app)                              Size     First Load JS
 
 **Statut** : ✅ **HEADER TRANSPARENT AVEC SCROLL IMPLÉMENTÉ**
 
-Le site **DSV Klantenservice** a maintenant :
+Le site **herstelservicedsv** a maintenant :
 - Un **header transparent** par défaut
 - Une **transition fluide** au scroll
 - Une **navigation toujours lisible**
